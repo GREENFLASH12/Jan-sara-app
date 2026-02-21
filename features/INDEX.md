@@ -19,7 +19,7 @@
 | PROJ-5 | Materialguide (Cashmere vs. Yak vs. Schaf vs. Kamel) | Deployed | — | 2026-02-21 |
 | PROJ-6 | Marktdaten-Seite (wo findet man uns vor Ort?) | Deployed | — | 2026-02-21 |
 | PROJ-7 | Newsletter-Anmeldung mit Willkommens-Mail | Planned | — | 2026-02-21 |
-| PROJ-8 | Kundenbewertungen pro Produkt | Planned | — | 2026-02-21 |
+| PROJ-8 | Kundenbewertungen pro Produkt | In Progress | [Spec](PROJ-8-kundenbewertungen.md) | 2026-02-21 |
 
 <!-- Add features above this line -->
 
