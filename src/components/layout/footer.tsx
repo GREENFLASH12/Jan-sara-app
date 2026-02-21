@@ -23,18 +23,18 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-secondary/30 mt-24">
+    <footer className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <Link
               href="/"
-              className="font-serif text-2xl font-light tracking-widest uppercase text-foreground"
+              className="font-serif text-2xl font-light tracking-widest uppercase text-background"
             >
               Dulaan
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-sm text-background/60 leading-relaxed">
               Wärme aus der Mongolei —<br />
               direkt von unserer Familie zu dir.
             </p>
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Shop Links */}
           <div>
-            <h3 className="text-xs font-medium tracking-widest uppercase text-foreground mb-4">
+            <h3 className="text-xs font-medium tracking-widest uppercase text-background mb-4">
               Shop
             </h3>
             <ul className="space-y-3">
@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-background/60 hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Brand Links */}
           <div>
-            <h3 className="text-xs font-medium tracking-widest uppercase text-foreground mb-4">
+            <h3 className="text-xs font-medium tracking-widest uppercase text-background mb-4">
               Über uns
             </h3>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-background/60 hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-xs font-medium tracking-widest uppercase text-foreground mb-4">
+            <h3 className="text-xs font-medium tracking-widest uppercase text-background mb-4">
               Rechtliches
             </h3>
             <ul className="space-y-3">
@@ -88,7 +88,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-background/60 hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -98,9 +98,9 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-10" />
+        <Separator className="my-10 bg-background/20" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-background/40">
           <p>© {new Date().getFullYear()} Dulaan. Alle Rechte vorbehalten.</p>
           <p>Handverlesene Wollprodukte aus der Mongolei</p>
         </div>

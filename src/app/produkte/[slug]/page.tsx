@@ -82,46 +82,60 @@ export default async function ProduktDetailPage({ params }: Props) {
       </Breadcrumb>
 
       {/* Product layout: Image + Info */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-        {/* Image */}
-        <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
-          {produkt.hauptbild_url ? (
-            <Image
-              src={produkt.hauptbild_url}
-              alt={produkt.name}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-serif text-2xl tracking-widest uppercase opacity-15 text-foreground">
-                Dulaan
-              </span>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        {/* Left: Images (Scrollable) */}
+        <div className="flex flex-col gap-4">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary">
+            {produkt.hauptbild_url ? (
+              <Image
+                src={produkt.hauptbild_url}
+                alt={produkt.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-serif text-2xl tracking-widest uppercase opacity-15 text-foreground">
+                  Dulaan
+                </span>
+              </div>
+            )}
+
+            {/* Badges */}
+            <div className="absolute top-4 left-4 flex flex-col gap-2">
+              {produkt.neu && (
+                <Badge className="rounded-none px-3 py-1 text-xs tracking-widest uppercase bg-foreground text-background">
+                  Neu
+                </Badge>
+              )}
+              {!produkt.auf_lager && (
+                <Badge
+                  variant="secondary"
+                  className="rounded-none px-3 py-1 text-xs tracking-widest uppercase"
+                >
+                  Ausverkauft
+                </Badge>
+              )}
+            </div>
+          </div>
+          
+          {/* Mock additional images for layout demonstration */}
+          {produkt.hauptbild_url && (
+            <div className="grid grid-cols-2 gap-4">
+               <div className="relative aspect-[3/4] overflow-hidden bg-secondary/50">
+                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80" />
+               </div>
+               <div className="relative aspect-[3/4] overflow-hidden bg-secondary/50">
+                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80" />
+               </div>
             </div>
           )}
-
-          {/* Badges */}
-          <div className="absolute top-4 left-4 flex flex-col gap-2">
-            {produkt.neu && (
-              <Badge className="rounded-none px-3 py-1 text-xs tracking-widest uppercase bg-foreground text-background">
-                Neu
-              </Badge>
-            )}
-            {!produkt.auf_lager && (
-              <Badge
-                variant="secondary"
-                className="rounded-none px-3 py-1 text-xs tracking-widest uppercase"
-              >
-                Ausverkauft
-              </Badge>
-            )}
-          </div>
         </div>
 
-        {/* Product info */}
-        <div className="flex flex-col">
+        {/* Right: Product info (Sticky) */}
+        <div className="flex flex-col sticky top-28 h-fit pb-12">
           {/* Category + Material */}
           <div className="flex items-center gap-3 text-[11px] tracking-widest uppercase text-muted-foreground">
             <span>{kategorieLabel}</span>
