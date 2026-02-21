@@ -12,7 +12,7 @@
 
 | ID | Feature | Status | Spec | Created |
 |----|---------|--------|------|---------|
-| PROJ-1 | Produktkatalog mit Filterung (Material, Kategorie, Preis) | Planned | — | 2026-02-21 |
+| PROJ-1 | Produktkatalog mit Filterung (Material, Kategorie, Preis) | Planned | [Spec](PROJ-1-produktkatalog-filterung.md) | 2026-02-21 |
 | PROJ-2 | Produktdetailseite mit Material-Erklärung & Herkunft | Planned | — | 2026-02-21 |
 | PROJ-3 | Warenkorb & Checkout (Stripe-Integration) | Planned | — | 2026-02-21 |
 | PROJ-4 | Unsere Geschichte — Markenseite (Familie, Mongolei, Mission) | Planned | — | 2026-02-21 |
