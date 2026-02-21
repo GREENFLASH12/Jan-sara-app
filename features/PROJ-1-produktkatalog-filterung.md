@@ -1,6 +1,6 @@
 # PROJ-1: Produktkatalog mit Filterung
 
-## Status: Planned
+## Status: In Review
 **Created:** 2026-02-21
 **Last Updated:** 2026-02-21
 
