@@ -26,6 +26,32 @@ export const PREIS_LABELS: Record<PreisRange, string> = {
   "ueber-200": "Über 200 €",
 }
 
+export const MATERIAL_BESCHREIBUNGEN: Record<Material, string> = {
+  cashmere:
+    "Feinste Kaschmirwolle, gewonnen aus dem weichen Unterfell mongolischer Kaschmirziegen. " +
+    "Jedes Tier liefert nur etwa 150–200 g pro Jahr — von Hand gekämmt, nie geschoren. " +
+    "Das Ergebnis: ein unvergleichlich weiches, leichtes und wärmendes Naturmaterial.",
+  yak:
+    "Yakwolle stammt vom Bauch der Yaks, die auf über 3.000 Metern Höhe in den mongolischen Steppen leben. " +
+    "Die Faser ist feiner als viele Schafwollen und hält auch bei extremer Kälte zuverlässig warm — " +
+    "ein Material, das seit Jahrhunderten von Nomadenfamilien geschätzt wird.",
+  schafwolle:
+    "Traditionelle mongolische Schafwolle — robust, atmungsaktiv und von Natur aus temperaturregulierend. " +
+    "Die Wolle wird minimal verarbeitet, um ihre natürlichen Eigenschaften zu bewahren. " +
+    "Ein ehrliches Material für Menschen, die Langlebigkeit über Trends stellen.",
+  kamelwolle:
+    "Seltene Wolle vom baktrischen Kamel der Gobi-Wüste. Die Tiere werfen ihr weiches Unterhaar " +
+    "im Frühling natürlich ab — es wird gesammelt, nicht geschoren. Kamelwolle ist leicht, " +
+    "thermoregulierend und besitzt einen charakteristisch warmen Farbton.",
+}
+
+export const KATEGORIE_BESCHREIBUNGEN: Record<Kategorie, string> = {
+  "schals-tuecher": "Schals & Tücher aus feinster mongolischer Wolle — für jede Jahreszeit.",
+  muetzen: "Handgefertigte Mützen, die wirklich warm halten.",
+  "decken-plaids": "Großzügige Decken und Plaids für Ihr Zuhause.",
+  accessoires: "Ausgewählte Accessoires aus edlen Naturmaterialien.",
+}
+
 export const MATERIAL_OPTIONS: { value: Material; label: string }[] =
   VALID_MATERIALS.map((v) => ({ value: v, label: MATERIAL_LABELS[v] }))
 

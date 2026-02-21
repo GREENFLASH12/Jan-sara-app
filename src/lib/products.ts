@@ -51,6 +51,28 @@ const fetchProdukte = async (filters: FilterParams): Promise<Produkt[]> => {
   return (data ?? []) as Produkt[]
 }
 
+const fetchProduktBySlug = async (slug: string): Promise<Produkt | null> => {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("slug", slug)
+    .limit(1)
+    .single()
+
+  if (error) {
+    console.error("Supabase error fetching product:", error)
+    return null
+  }
+
+  return data as Produkt
+}
+
+export function getProduktBySlug(slug: string): Promise<Produkt | null> {
+  return unstable_cache(fetchProduktBySlug, ["produkt", slug], {
+    revalidate: 60,
+  })(slug)
+}
+
 export function getProdukte(filters: FilterParams): Promise<Produkt[]> {
   const cacheKey = [
     "produkte",
