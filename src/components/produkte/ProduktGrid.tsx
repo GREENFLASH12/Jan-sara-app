@@ -7,6 +7,10 @@ interface ProduktGridProps {
   produkte: Produkt[]
 }
 
+interface ProduktGridPromiseProps {
+  produktePromise: Promise<Produkt[]>
+}
+
 export function ProduktGrid({ produkte }: ProduktGridProps) {
   if (produkte.length === 0) {
     return (
@@ -31,4 +35,9 @@ export function ProduktGrid({ produkte }: ProduktGridProps) {
       ))}
     </div>
   )
+}
+
+export async function ProduktGridAsync({ produktePromise }: ProduktGridPromiseProps) {
+  const produkte = await produktePromise
+  return <ProduktGrid produkte={produkte} />
 }

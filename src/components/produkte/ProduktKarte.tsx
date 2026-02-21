@@ -22,10 +22,12 @@ export function ProduktKarte({ produkt }: ProduktKarteProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-serif text-lg tracking-widest uppercase opacity-20 text-foreground">
-              Dulaan
-            </span>
+          <div className="absolute inset-0 bg-secondary flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-muted/50 flex items-center justify-center">
+              <span className="font-serif text-lg tracking-widest uppercase opacity-30 text-foreground">
+                D
+              </span>
+            </div>
           </div>
         )}
 
