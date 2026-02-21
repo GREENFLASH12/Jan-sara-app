@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
-import { stripe } from "@/lib/stripe"
+import { getStripe } from "@/lib/stripe"
 
 const lineItemSchema = z.object({
   name: z.string().min(1),
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
     const origin = request.headers.get("origin") ?? "http://localhost:3000"
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       locale: "de",
       line_items: items.map((item) => ({
