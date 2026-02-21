@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+
     /* Dulaan Brand Colors */
     --background: 60 20% 97%;        /* #FAFAF7 Warmweiss */
     --foreground: 30 10% 10%;        /* Dunkles Warmbraun */
