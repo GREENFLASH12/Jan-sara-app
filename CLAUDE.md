@@ -48,6 +48,24 @@ All features tracked in `features/INDEX.md`. Every skill reads it at start and u
 - **shadcn/ui first:** NEVER create custom versions of installed shadcn components
 - **Human-in-the-loop:** All workflows have user approval checkpoints
 
+## Session-Ende & Wiederaufnahme
+
+**Vor dem Ende jeder Session IMMER:**
+1. Alle Änderungen committen und pushen
+2. `RESUME.md` aktualisieren mit:
+   - Was wurde in dieser Session fertig?
+   - Was ist der nächste konkrete Schritt?
+   - Welche Entscheidungen stehen noch aus?
+
+**Beim Start einer neuen Session IMMER:**
+1. `RESUME.md` lesen — da steht wo wir aufgehört haben
+2. `features/INDEX.md` lesen — aktueller Feature-Status
+3. `git log --oneline -5` — letzte Commits prüfen
+
+Die `RESUME.md` ist die einzige Quelle der Wahrheit für den Sessionfortschritt.
+
+---
+
 ## Build & Test Commands
 
 ```bash
