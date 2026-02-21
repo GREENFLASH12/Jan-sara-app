@@ -12,12 +12,12 @@
 
 | ID | Feature | Status | Spec | Created |
 |----|---------|--------|------|---------|
-| PROJ-1 | Produktkatalog mit Filterung (Material, Kategorie, Preis) | In Progress | [Spec](PROJ-1-produktkatalog-filterung.md) | 2026-02-21 |
-| PROJ-2 | Produktdetailseite mit Material-Erklärung & Herkunft | In Progress | — | 2026-02-21 |
-| PROJ-3 | Warenkorb & Checkout (Stripe-Integration) | Planned | — | 2026-02-21 |
-| PROJ-4 | Unsere Geschichte — Markenseite (Familie, Mongolei, Mission) | Planned | — | 2026-02-21 |
-| PROJ-5 | Materialguide (Cashmere vs. Yak vs. Schaf vs. Kamel) | Planned | — | 2026-02-21 |
-| PROJ-6 | Marktdaten-Seite (wo findet man uns vor Ort?) | Planned | — | 2026-02-21 |
+| PROJ-1 | Produktkatalog mit Filterung (Material, Kategorie, Preis) | In Review | [Spec](PROJ-1-produktkatalog-filterung.md) | 2026-02-21 |
+| PROJ-2 | Produktdetailseite mit Material-Erklärung & Herkunft | In Review | — | 2026-02-21 |
+| PROJ-3 | Warenkorb & Checkout (Stripe-Integration) | In Review | — | 2026-02-21 |
+| PROJ-4 | Unsere Geschichte — Markenseite (Familie, Mongolei, Mission) | In Review | — | 2026-02-21 |
+| PROJ-5 | Materialguide (Cashmere vs. Yak vs. Schaf vs. Kamel) | In Review | — | 2026-02-21 |
+| PROJ-6 | Marktdaten-Seite (wo findet man uns vor Ort?) | In Review | — | 2026-02-21 |
 | PROJ-7 | Newsletter-Anmeldung mit Willkommens-Mail | Planned | — | 2026-02-21 |
 | PROJ-8 | Kundenbewertungen pro Produkt | Planned | — | 2026-02-21 |
 

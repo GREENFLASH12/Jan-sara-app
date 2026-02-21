@@ -6,6 +6,7 @@ import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { AddToCartButton } from "@/components/produkte/AddToCartButton"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -147,13 +148,7 @@ export default async function ProduktDetailPage({ params }: Props) {
 
           {/* Add to cart */}
           <div className="mt-8">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto rounded-none px-12 tracking-wider uppercase text-sm"
-              disabled={!produkt.auf_lager}
-            >
-              {produkt.auf_lager ? "In den Warenkorb" : "Ausverkauft"}
-            </Button>
+            <AddToCartButton produkt={produkt} />
           </div>
 
           <Separator className="my-8" />
