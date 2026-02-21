@@ -98,7 +98,77 @@ Jedes Produkt hat folgende Felder:
 ---
 
 ## Tech Design (Solution Architect)
-_To be added by /architecture_
+
+### Komponenten-Struktur
+
+```
+/produkte  (Server Component — lädt Daten, kennt URL-Filter)
+├── ProduktSeiteHeader
+│   └── Titel + Produktanzahl ("12 Produkte")
+│
+├── FilterLeiste  (Desktop — sichtbar als Seitenleiste links)
+│   ├── MaterialFilter  (Checkboxen — Mehrfachauswahl)
+│   ├── KategorieFilter  (Checkboxen — Mehrfachauswahl)
+│   ├── PreisFilter  (Radio-Buttons — Einfachauswahl)
+│   └── SortierungDropdown  (Select)
+│
+├── AktiveFilterChips  (Client — zeigt aktive Filter als Tags mit X)
+│   └── "Alle zurücksetzen" Button
+│
+├── MobileFilterButton  (Client — öffnet Drawer auf Mobile)
+│   └── FilterDrawer  (Sheet/Drawer mit selben Filteroptionen)
+│
+├── ProduktGrid
+│   ├── ProduktKarte × n
+│   │   ├── Produktbild  (next/image — optimiert, lazy)
+│   │   ├── Neu-Badge  (optional)
+│   │   ├── Ausverkauft-Badge  (overlay, wenn nicht auf Lager)
+│   │   ├── Produktname
+│   │   ├── Material-Label
+│   │   └── Preis
+│   ├── SkeletonKarten  (Lade-Zustand)
+│   └── LeerZustand  ("Keine Produkte gefunden" + Reset-Button)
+│
+└── Klick auf Karte → /produkte/[slug]
+```
+
+### Datenfluss
+
+```
+1. Kundin öffnet /produkte
+        ↓
+2. Next.js liest URL-Parameter (z.B. ?material=cashmere&sort=preis-asc)
+        ↓
+3. Server fragt Supabase: "Gib mir alle Cashmere-Produkte, sortiert nach Preis"
+        ↓
+4. Supabase gibt gefilterte Liste zurück (Datenbank macht die Arbeit)
+        ↓
+5. Seite wird fertig gerendert an den Browser geschickt (Google sieht alle Produkte)
+        ↓
+6. Kundin ändert Filter → URL aktualisiert sich → Schritt 2 wiederholt sich
+```
+
+### Datenspeicherung
+
+| Was | Wo | Warum |
+|-----|-----|-------|
+| Produktdaten | Supabase Datenbank (`products` Tabelle) | Familie kann direkt im Dashboard bearbeiten |
+| Produktbilder | Supabase Storage (`product-images` Bucket) | Zentral, sicher, einfach hochzuladen |
+| Filter-Zustand | URL (`?material=cashmere&kategorie=schals`) | Direkt verlinkbar, kein Browser-Speicher nötig |
+
+### Wichtigste Entscheidungen
+
+| Entscheidung | Warum |
+|---|---|
+| Server-seitiges Rendern | Google sieht alle Produkte → SEO. Schnellerer Seitenaufbau. |
+| Filter per URL | Kundin kann gefilterte Ansicht als Link teilen oder bookmarken. |
+| Filterung in der Datenbank | Supabase liefert nur passende Produkte — skaliert auch bei 1.000+ Produkten. |
+| Bildoptimierung via Next.js | Automatisch WebP, skaliert für Mobile/Desktop, lazy loading. |
+| 60-Sekunden Cache | Produktliste wird gecacht — Familie ändert selten, spart DB-Abfragen. |
+| Kein Admin-Interface in V1 | Familie pflegt direkt im Supabase-Dashboard — kein Extra-Aufwand. |
+
+### Neue Pakete
+Keine — alle benötigten Tools sind bereits installiert.
 
 ## QA Test Results
 _To be added by /qa_
