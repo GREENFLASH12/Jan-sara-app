@@ -15,7 +15,7 @@
 
 ## Phase 0 — Fundament
 
-> Projekt-Setup, Design-System, Infrastruktur. Einmalig, kein Feature-ID.
+> Projekt-Setup, Design-System, Infrastruktur. Einmalig, keine Feature-ID.
 
 - [x] Design-System definieren (Farben, Fonts, Abstände als Tailwind-Config)
   - Cormorant Garamond (Serif, Headlines) + Inter (Sans, Body) einbinden

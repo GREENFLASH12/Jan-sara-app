@@ -79,7 +79,7 @@ Das Ziel: Der erste deutschsprachige Online-Shop für authentische mongolische W
 
 ## Non-Goals (V1)
 
-- **Kein Mehrsprachigkeit** — nur Deutsch im ersten Release
+- **Keine Mehrsprachigkeit** — nur Deutsch im ersten Release
 - **Keine App** — Mobile-optimierte Website reicht
 - **Kein Kundenkonto / Login** — Gast-Checkout ist ausreichend für V1
 - **Kein komplexes Lagerverwaltungssystem** — manuelle Pflege ist akzeptabel

@@ -1,6 +1,6 @@
 # PROJ-1: Produktkatalog mit Filterung
 
-## Status: Planned
+## Status: In Progress
 **Created:** 2026-02-21
 **Last Updated:** 2026-02-21
 
@@ -101,7 +101,7 @@ Jedes Produkt hat folgende Felder:
 
 ### Komponenten-Struktur
 
-```
+```text
 /produkte  (Server Component — lädt Daten, kennt URL-Filter)
 ├── ProduktSeiteHeader
 │   └── Titel + Produktanzahl ("12 Produkte")
@@ -134,7 +134,7 @@ Jedes Produkt hat folgende Felder:
 
 ### Datenfluss
 
-```
+```text
 1. Kundin öffnet /produkte
         ↓
 2. Next.js liest URL-Parameter (z.B. ?material=cashmere&sort=preis-asc)
