@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { AddToCartButton } from "@/components/produkte/AddToCartButton"
+import { BewertungenSection } from "@/components/produkte/BewertungenSection"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -221,6 +222,9 @@ export default async function ProduktDetailPage({ params }: Props) {
           </Link>
         </Button>
       </div>
+
+      {/* Bewertungen */}
+      <BewertungenSection produktSlug={slug} />
     </div>
   )
 }
