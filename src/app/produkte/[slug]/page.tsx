@@ -86,14 +86,14 @@ export default async function ProduktDetailPage({ params }: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         {/* Left: Images (Scrollable) */}
         <div className="flex flex-col gap-4">
-          <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#FAFAF7]">
             {produkt.hauptbild_url ? (
               <Image
                 src={produkt.hauptbild_url}
                 alt={produkt.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover mix-blend-multiply"
                 priority
               />
             ) : (
@@ -125,11 +125,11 @@ export default async function ProduktDetailPage({ params }: Props) {
           {/* Mock additional images for layout demonstration */}
           {produkt.hauptbild_url && (
             <div className="grid grid-cols-2 gap-4">
-               <div className="relative aspect-[3/4] overflow-hidden bg-secondary/50">
-                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80" />
+               <div className="relative aspect-[3/4] overflow-hidden bg-[#FAFAF7]">
+                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80 mix-blend-multiply" />
                </div>
-               <div className="relative aspect-[3/4] overflow-hidden bg-secondary/50">
-                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80" />
+               <div className="relative aspect-[3/4] overflow-hidden bg-[#FAFAF7]">
+                <Image src={produkt.hauptbild_url} alt="Detail" fill className="object-cover opacity-80 mix-blend-multiply" />
                </div>
             </div>
           )}

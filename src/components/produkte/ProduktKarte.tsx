@@ -12,14 +12,14 @@ export function ProduktKarte({ produkt }: ProduktKarteProps) {
   const content = (
     <div className="group flex flex-col">
       {/* Image */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#FAFAF7]">
         {produkt.hauptbild_url ? (
           <Image
             src={produkt.hauptbild_url}
             alt={produkt.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
           />
         ) : (
           <div className="absolute inset-0 bg-secondary flex items-center justify-center">
