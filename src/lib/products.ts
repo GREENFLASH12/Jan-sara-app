@@ -126,6 +126,7 @@ function filterMockProdukte(produkte: Produkt[], filters: FilterParams): Produkt
 }
 
 const fetchProdukte = async (filters: FilterParams): Promise<Produkt[]> => {
+  try {
   const { data, error } = await supabase.from("products").select("*")
 
   if (error || !data || data.length === 0) {
@@ -172,9 +173,14 @@ const fetchProdukte = async (filters: FilterParams): Promise<Produkt[]> => {
   }
 
   return produkte.slice(0, 100)
+  } catch {
+    console.log("Using mock data (Supabase unavailable or empty)")
+    return filterMockProdukte(MOCK_PRODUKTE, filters)
+  }
 }
 
 const fetchProduktBySlug = async (slug: string): Promise<Produkt | null> => {
+  try {
   const { data, error } = await supabase
     .from("products")
     .select("*")
@@ -188,6 +194,10 @@ const fetchProduktBySlug = async (slug: string): Promise<Produkt | null> => {
   }
 
   return data as Produkt
+  } catch {
+    console.log("Using mock product (Supabase unavailable or not found)")
+    return MOCK_PRODUKTE.find((p) => p.slug === slug) ?? null
+  }
 }
 
 export function getProduktBySlug(slug: string): Promise<Produkt | null> {
