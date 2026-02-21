@@ -12,29 +12,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
-import { buildFilterURL } from "@/lib/filter-utils"
+import {
+  buildFilterURL,
+  MATERIAL_OPTIONS,
+  KATEGORIE_OPTIONS,
+  PREIS_OPTIONS,
+} from "@/lib/filter-utils"
 import type { FilterParams, Material, Kategorie, PreisRange, Sortierung } from "@/types/product"
-
-const MATERIAL_OPTIONS: { value: Material; label: string }[] = [
-  { value: "cashmere", label: "Cashmere" },
-  { value: "yak", label: "Yak" },
-  { value: "schafwolle", label: "Schafwolle" },
-  { value: "kamelwolle", label: "Kamelwolle" },
-]
-
-const KATEGORIE_OPTIONS: { value: Kategorie; label: string }[] = [
-  { value: "schals-tuecher", label: "Schals & Tücher" },
-  { value: "muetzen", label: "Mützen" },
-  { value: "decken-plaids", label: "Decken & Plaids" },
-  { value: "accessoires", label: "Accessoires" },
-]
-
-const PREIS_OPTIONS: { value: PreisRange; label: string }[] = [
-  { value: "unter-50", label: "Unter 50 €" },
-  { value: "50-100", label: "50–100 €" },
-  { value: "100-200", label: "100–200 €" },
-  { value: "ueber-200", label: "Über 200 €" },
-]
 
 interface FilterLeisteProps {
   filters: FilterParams

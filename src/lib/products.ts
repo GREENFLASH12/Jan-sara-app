@@ -51,6 +51,14 @@ const fetchProdukte = async (filters: FilterParams): Promise<Produkt[]> => {
   return (data ?? []) as Produkt[]
 }
 
-export const getProdukte = unstable_cache(fetchProdukte, ["produkte"], {
-  revalidate: 60,
-})
+export function getProdukte(filters: FilterParams): Promise<Produkt[]> {
+  const cacheKey = [
+    "produkte",
+    filters.material?.join(",") ?? "",
+    filters.kategorie?.join(",") ?? "",
+    filters.preis ?? "",
+    filters.sort ?? "neueste",
+  ]
+
+  return unstable_cache(fetchProdukte, cacheKey, { revalidate: 60 })(filters)
+}

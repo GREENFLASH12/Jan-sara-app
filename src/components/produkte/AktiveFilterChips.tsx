@@ -4,29 +4,13 @@ import { useRouter } from "next/navigation"
 import { X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { buildFilterURL } from "@/lib/filter-utils"
+import {
+  buildFilterURL,
+  MATERIAL_LABELS,
+  KATEGORIE_LABELS,
+  PREIS_LABELS,
+} from "@/lib/filter-utils"
 import type { FilterParams, Material, Kategorie } from "@/types/product"
-
-const MATERIAL_LABELS: Record<string, string> = {
-  cashmere: "Cashmere",
-  yak: "Yak",
-  schafwolle: "Schafwolle",
-  kamelwolle: "Kamelwolle",
-}
-
-const KATEGORIE_LABELS: Record<string, string> = {
-  "schals-tuecher": "Schals & Tücher",
-  muetzen: "Mützen",
-  "decken-plaids": "Decken & Plaids",
-  accessoires: "Accessoires",
-}
-
-const PREIS_LABELS: Record<string, string> = {
-  "unter-50": "Unter 50 €",
-  "50-100": "50–100 €",
-  "100-200": "100–200 €",
-  "ueber-200": "Über 200 €",
-}
 
 interface AktiveFilterChipsProps {
   filters: FilterParams

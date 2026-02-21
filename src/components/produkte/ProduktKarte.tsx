@@ -1,14 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
+import { MATERIAL_LABELS } from "@/lib/filter-utils"
 import type { Produkt } from "@/types/product"
-
-const MATERIAL_LABELS: Record<string, string> = {
-  cashmere: "Cashmere",
-  yak: "Yak",
-  schafwolle: "Schafwolle",
-  kamelwolle: "Kamelwolle",
-}
 
 interface ProduktKarteProps {
   produkt: Produkt

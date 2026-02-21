@@ -5,6 +5,36 @@ export const VALID_KATEGORIEN: Kategorie[] = ["schals-tuecher", "muetzen", "deck
 export const VALID_PREIS_RANGES: PreisRange[] = ["unter-50", "50-100", "100-200", "ueber-200"]
 export const VALID_SORTIERUNGEN: Sortierung[] = ["neueste", "preis-asc", "preis-desc"]
 
+export const MATERIAL_LABELS: Record<Material, string> = {
+  cashmere: "Cashmere",
+  yak: "Yak",
+  schafwolle: "Schafwolle",
+  kamelwolle: "Kamelwolle",
+}
+
+export const KATEGORIE_LABELS: Record<Kategorie, string> = {
+  "schals-tuecher": "Schals & Tücher",
+  muetzen: "Mützen",
+  "decken-plaids": "Decken & Plaids",
+  accessoires: "Accessoires",
+}
+
+export const PREIS_LABELS: Record<PreisRange, string> = {
+  "unter-50": "Unter 50 €",
+  "50-100": "50–100 €",
+  "100-200": "100–200 €",
+  "ueber-200": "Über 200 €",
+}
+
+export const MATERIAL_OPTIONS: { value: Material; label: string }[] =
+  VALID_MATERIALS.map((v) => ({ value: v, label: MATERIAL_LABELS[v] }))
+
+export const KATEGORIE_OPTIONS: { value: Kategorie; label: string }[] =
+  VALID_KATEGORIEN.map((v) => ({ value: v, label: KATEGORIE_LABELS[v] }))
+
+export const PREIS_OPTIONS: { value: PreisRange; label: string }[] =
+  VALID_PREIS_RANGES.map((v) => ({ value: v, label: PREIS_LABELS[v] }))
+
 export function parseFiltersFromSearchParams(
   params: Record<string, string | string[] | undefined>
 ): FilterParams {
