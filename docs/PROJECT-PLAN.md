@@ -17,14 +17,14 @@
 
 > Projekt-Setup, Design-System, Infrastruktur. Einmalig, kein Feature-ID.
 
-- [ ] Design-System definieren (Farben, Fonts, Abstände als Tailwind-Config)
+- [x] Design-System definieren (Farben, Fonts, Abstände als Tailwind-Config)
   - Cormorant Garamond (Serif, Headlines) + Inter (Sans, Body) einbinden
   - Farbpalette: `#FAFAF7` Warmweiss, Sandbeige `#D4B896`, Steingrau `#6B6B6B`
 - [ ] Supabase-Projekt anlegen + `.env.local` konfigurieren
-- [ ] shadcn/ui Basis-Komponenten installieren (Button, Card, Badge, Input, Select, Dialog, Toast)
-- [ ] Globales Layout: Header (Logo + Nav) + Footer
-- [ ] Favicon + Meta-Tags (OG-Image, Description)
-- [ ] `features/INDEX.md` initial befüllen (alle 8 Features eintragen)
+- [x] shadcn/ui Basis-Komponenten installieren (Button, Card, Badge, Input, Select, Dialog, Toast)
+- [x] Globales Layout: Header (Logo + Nav) + Footer
+- [x] Favicon + Meta-Tags (OG-Image, Description)
+- [x] `features/INDEX.md` initial befüllen (alle 8 Features eintragen)
 
 ---
 
