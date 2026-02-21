@@ -1,101 +1,124 @@
-import Image from 'next/image'
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import {
+  MATERIAL_LABELS,
+  MATERIAL_BESCHREIBUNGEN,
+  VALID_MATERIALS,
+} from "@/lib/filter-utils"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{' '}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      {/* Hero */}
+      <section className="flex flex-col items-center justify-center px-4 py-28 sm:py-36 text-center">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-6">
+          Mongolische Wollprodukte
+        </p>
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.1] tracking-wide max-w-3xl">
+          Wärme aus der Mongolei
+        </h1>
+        <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl">
+          Handverlesene Cashmere-, Yak- und Kamelwollprodukte — direkt von unserer Familie zu dir.
+          Authentisch, fair und von höchster Qualität.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row gap-3">
+          <Button size="lg" className="rounded-none px-10 tracking-wider uppercase text-sm" asChild>
+            <Link href="/produkte">Produkte entdecken</Link>
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="rounded-none px-10 tracking-wider uppercase text-sm"
+            asChild
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Link href="/ueber-uns">Unsere Geschichte</Link>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* USP Bar */}
+      <section className="border-y border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div>
+              <p className="text-sm font-medium">Direkt aus der Mongolei</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Keine Zwischenhändler, faire Preise
+              </p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Handverlesen & geprüft</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Jedes Produkt von uns persönlich ausgewählt
+              </p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Versand innerhalb Deutschlands</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Sorgfältig verpackt, schnell geliefert
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Materials Preview */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <p className="text-[11px] tracking-widest uppercase text-muted-foreground mb-3">
+            Unsere Materialien
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-wide">
+            Von der Steppe zu dir
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {VALID_MATERIALS.map((material) => (
+            <Link
+              key={material}
+              href={`/produkte?material=${material}`}
+              className="group p-6 border border-border/60 hover:border-accent/40 transition-colors"
+            >
+              <h3 className="font-serif text-lg font-light tracking-wide mb-2 group-hover:text-accent transition-colors">
+                {MATERIAL_LABELS[material]}
+              </h3>
+              <p className="text-xs leading-relaxed text-muted-foreground line-clamp-3">
+                {MATERIAL_BESCHREIBUNGEN[material]}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] tracking-widest uppercase text-muted-foreground group-hover:text-foreground transition-colors">
+                Entdecken
+                <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Separator className="mx-auto max-w-7xl" />
+
+      {/* Story Teaser */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <p className="text-[11px] tracking-widest uppercase text-muted-foreground mb-3">
+          Unsere Geschichte
+        </p>
+        <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-wide mb-6">
+          Eine Familie, zwei Kulturen, eine Leidenschaft
+        </h2>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-8">
+          Dulaan bedeutet &bdquo;Wärme&ldquo; auf Mongolisch. Wir sind eine mongolisch-deutsche
+          Familie, die seit Jahren handverlesene Wollprodukte auf deutschen Märkten verkauft.
+          Jetzt auch online — mit derselben Leidenschaft und Sorgfalt.
+        </p>
+        <Button variant="outline" className="rounded-none" asChild>
+          <Link href="/ueber-uns">
+            Mehr erfahren
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+      </section>
+    </>
   )
 }

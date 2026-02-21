@@ -6,6 +6,7 @@ import { Menu, ShoppingBag, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useCart } from "@/hooks/use-cart";
 
 const navLinks = [
   { href: "/produkte", label: "Produkte" },
@@ -16,6 +17,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -44,9 +46,14 @@ export function Header() {
 
           {/* Right: Cart + Mobile Menu */}
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" aria-label="Warenkorb" asChild>
+            <Button variant="ghost" size="icon" aria-label="Warenkorb" className="relative" asChild>
               <Link href="/warenkorb">
                 <ShoppingBag className="h-5 w-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-foreground text-background text-[10px] font-medium">
+                    {totalItems > 9 ? "9+" : totalItems}
+                  </span>
+                )}
               </Link>
             </Button>
 

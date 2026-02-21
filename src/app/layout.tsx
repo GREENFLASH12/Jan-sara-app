@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CartProvider } from "@/hooks/use-cart";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -52,9 +53,11 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="antialiased font-sans">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
